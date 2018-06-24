@@ -10,17 +10,18 @@
   
   <title>单词倒序输出 | JFBom&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="java,编程,面试">
+  <meta name="description" content="问题描述:将一段字符串中的单词倒序输出  例子:  输入:You are better 输出:better are You">
+<meta name="keywords" content="java,编程,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单词倒序输出">
 <meta property="og:url" content="http://yoursite.com/2018/06/23/单词倒序输出/index.html">
 <meta property="og:site_name" content="JFBom&#39;s Blog">
+<meta property="og:description" content="问题描述:将一段字符串中的单词倒序输出  例子:  输入:You are better 输出:better are You">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/maer.jpg">
-<meta property="og:updated_time" content="2018-06-23T13:07:27.897Z">
+<meta property="og:updated_time" content="2018-06-24T15:38:27.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单词倒序输出">
-<meta name="twitter:image" content="http://yoursite.com/img/maer.jpg">
+<meta name="twitter:description" content="问题描述:将一段字符串中的单词倒序输出  例子:  输入:You are better 输出:better are You">
   
     <link rel="alternative" href="/atom.xml" title="JFBom&#39;s Blog" type="application/atom+xml">
   
@@ -67,9 +68,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/java">随笔</a></li>
+				<li><a href="/tags/java/">随笔</a></li>
 	        
-				<li><a href="/tags/面试">面试</a></li>
+				<li><a href="/tags/面试/">面试</a></li>
 	        
 			</ul>
 		</nav>
@@ -145,9 +146,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/java">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/java/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/面试">面试</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/面试/">面试</a></li>
 		        
 				</ul>
 			</nav>
@@ -183,9 +184,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/maer.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>将一段字符串中的单词倒序输出<br>例子:<br>输入:You are better</p>
-<p>输出:better are You<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		String s = &quot;Hello World Here I Come&quot;;</span><br><span class="line">		String[] str = s.split(&quot; &quot;);</span><br><span class="line">		for (int i = str.length-1; i &gt;0; i--) &#123;</span><br><span class="line">			System.out.print( str[i] +&quot; &quot;);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println( str[0] );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>将一段字符串中的单词倒序输出</p>
+<ul>
+<li>例子:</li>
+</ul>
+<p>输入:You are better</p>
+<p>输出:better are You<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		String s = &quot;Hello World Here I Come&quot;;</span><br><span class="line">		String[] str = s.split(&quot; &quot;);</span><br><span class="line">		for (int i = str.length-1; i &gt;0; i--) &#123;</span><br><span class="line">			System.out.print( str[i] +&quot; &quot;);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println( str[0] );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -304,6 +308,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/06/24/SSM框架的优势/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SSM框架的优势
+        
+      </div>
+    </a>
+  
   
   
     <a href="/2018/06/23/什么是抽象类/" id="article-nav-older" class="article-nav-link-wrap">
@@ -334,6 +347,24 @@
 
   
   
+  
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzU0OC8xNDA4MA==
+">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
   
@@ -442,6 +473,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
               </li>
              
               <li class="article-tag-list-item">

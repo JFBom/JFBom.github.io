@@ -16,11 +16,11 @@
 <meta property="og:url" content="http://yoursite.com/2018/06/23/如何实现多线程/index.html">
 <meta property="og:site_name" content="JFBom&#39;s Blog">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/03.jpg">
-<meta property="og:updated_time" content="2018-06-23T13:12:36.545Z">
+<meta property="og:image" content="http://yoursite.com/2018/06/23/如何实现多线程/03.jpg">
+<meta property="og:updated_time" content="2018-06-24T13:26:17.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何实现多线程">
-<meta name="twitter:image" content="http://yoursite.com/img/03.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/23/如何实现多线程/03.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JFBom&#39;s Blog" type="application/atom+xml">
   
@@ -67,9 +67,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/java">随笔</a></li>
+				<li><a href="/tags/java/">随笔</a></li>
 	        
-				<li><a href="/tags/面试">面试</a></li>
+				<li><a href="/tags/面试/">面试</a></li>
 	        
 			</ul>
 		</nav>
@@ -145,9 +145,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/java">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/java/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/面试">面试</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/面试/">面试</a></li>
 		        
 				</ul>
 			</nav>
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/03.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
+        <p><img src="/2018/06/23/如何实现多线程/03.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
 <h4 id="1-继承Thread类实现多继承（此法优缺点，若已经继承类，则无法再继承Thread类）"><a href="#1-继承Thread类实现多继承（此法优缺点，若已经继承类，则无法再继承Thread类）" class="headerlink" title="1.继承Thread类实现多继承（此法优缺点，若已经继承类，则无法再继承Thread类）"></a>1.继承Thread类实现多继承（此法优缺点，若已经继承类，则无法再继承Thread类）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	public class TestThread extends Thread &#123;//自定义类继承Thread类</span><br><span class="line">    //run()方法里是线程体</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">            System.out.println(this.getName() + &quot;:&quot; + i);//getName()方法是返回线程名称</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        TestThread thread1 = new TestThread();//创建线程对象</span><br><span class="line">        thread1.start();//启动线程</span><br><span class="line">        TestThread thread2 = new TestThread();</span><br><span class="line">        thread2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2-通过Runnable接口实现多继承"><a href="#2-通过Runnable接口实现多继承" class="headerlink" title="2.通过Runnable接口实现多继承"></a>2.通过Runnable接口实现多继承</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class TestThread2 implements Runnable &#123;//自定义类实现Runnable接口；</span><br><span class="line">    //run()方法里是线程体；</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot;:&quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //创建线程对象，把实现了Runnable接口的对象作为参数传入；</span><br><span class="line">        Thread thread1 = new Thread(new TestThread2());</span><br><span class="line">        thread1.start();//启动线程；</span><br><span class="line">        Thread thread2 = new Thread(new TestThread2());</span><br><span class="line">        thread2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -335,6 +335,24 @@
   
   
   
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzU0OC8xNDA4MA==
+">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+  
 
   
 
@@ -442,6 +460,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
               </li>
              
               <li class="article-tag-list-item">

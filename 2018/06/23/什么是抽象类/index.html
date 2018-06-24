@@ -16,11 +16,11 @@
 <meta property="og:url" content="http://yoursite.com/2018/06/23/什么是抽象类/index.html">
 <meta property="og:site_name" content="JFBom&#39;s Blog">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/动物.jpg">
-<meta property="og:updated_time" content="2018-06-23T12:43:53.751Z">
+<meta property="og:image" content="http://yoursite.com/2018/06/23/什么是抽象类/动物.jpg">
+<meta property="og:updated_time" content="2018-06-24T13:25:12.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是抽象类">
-<meta name="twitter:image" content="http://yoursite.com/img/动物.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/23/什么是抽象类/动物.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JFBom&#39;s Blog" type="application/atom+xml">
   
@@ -67,9 +67,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/java">随笔</a></li>
+				<li><a href="/tags/java/">随笔</a></li>
 	        
-				<li><a href="/tags/面试">面试</a></li>
+				<li><a href="/tags/面试/">面试</a></li>
 	        
 			</ul>
 		</nav>
@@ -145,9 +145,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/java">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/java/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/面试">面试</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/面试/">面试</a></li>
 		        
 				</ul>
 			</nav>
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/动物.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
+        <p><img src="/2018/06/23/什么是抽象类/动物.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
 <h4 id="抽象类："><a href="#抽象类：" class="headerlink" title="抽象类："></a>抽象类：</h4><h5 id="是用来捕捉子类通用特性的，是对子类共有的属性和行为的一种抽象。说白了就是当多个子类中出现相同功能，可以进行向上抽取功能定义，而不抽功能主体。说白了抽象类比一般类只是多了个抽象函数-共性行为-，其他的该怎么描述还怎么描述。"><a href="#是用来捕捉子类通用特性的，是对子类共有的属性和行为的一种抽象。说白了就是当多个子类中出现相同功能，可以进行向上抽取功能定义，而不抽功能主体。说白了抽象类比一般类只是多了个抽象函数-共性行为-，其他的该怎么描述还怎么描述。" class="headerlink" title="是用来捕捉子类通用特性的，是对子类共有的属性和行为的一种抽象。说白了就是当多个子类中出现相同功能，可以进行向上抽取功能定义，而不抽功能主体。说白了抽象类比一般类只是多了个抽象函数(共性行为)，其他的该怎么描述还怎么描述。"></a>是用来捕捉子类通用特性的，是对子类共有的属性和行为的一种抽象。说白了就是当多个子类中出现相同功能，可以进行向上抽取功能定义，而不抽功能主体。说白了抽象类比一般类只是多了个抽象函数(共性行为)，其他的该怎么描述还怎么描述。</h5><h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><h5 id="比如我们知道有很多的动物，但是动物特别的多，我们不能每个动物都列出来，那么我们就抽象出一个类new-Animal-这个Animal就是抽象类，然后我们可以继承这个Animal类，描述其长相（方法），然后我们就知道这是个什么动物了。"><a href="#比如我们知道有很多的动物，但是动物特别的多，我们不能每个动物都列出来，那么我们就抽象出一个类new-Animal-这个Animal就是抽象类，然后我们可以继承这个Animal类，描述其长相（方法），然后我们就知道这是个什么动物了。" class="headerlink" title="比如我们知道有很多的动物，但是动物特别的多，我们不能每个动物都列出来，那么我们就抽象出一个类new       Animal(),这个Animal就是抽象类，然后我们可以继承这个Animal类，描述其长相（方法），然后我们就知道这是个什么动物了。"></a>比如我们知道有很多的动物，但是动物特别的多，我们不能每个动物都列出来，那么我们就抽象出一个类new       Animal(),这个Animal就是抽象类，然后我们可以继承这个Animal类，描述其长相（方法），然后我们就知道这是个什么动物了。</h5><h5 id="抽象类的注意事项"><a href="#抽象类的注意事项" class="headerlink" title="抽象类的注意事项:"></a>抽象类的注意事项:</h5><p>（1）抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public；<br>（2）抽象类不能直接实例化，需要依靠子类采用向上转型的方式处理；<br>（3）抽象类必须有子类，使用extends继承，一个子类只能继承一个抽象类；<br>（4）子类（如果不是抽象类）则必须覆写抽象类之中的全部抽象方法（如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。）</p>
 
       
@@ -335,6 +335,24 @@
   
   
   
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzU0OC8xNDA4MA==
+">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+  
 
   
 
@@ -442,6 +460,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSM</a>
               </li>
              
               <li class="article-tag-list-item">
