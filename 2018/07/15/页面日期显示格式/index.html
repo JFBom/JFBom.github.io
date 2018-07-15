@@ -8,15 +8,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   
-  <title>Tag: caché | JFBom&#39;s Blog</title>
+  <title>页面日期显示格式 | JFBom&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JFBom&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/cache/index.html">
+  <meta name="keywords" content="java,jsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="页面日期显示格式">
+<meta property="og:url" content="http://yoursite.com/2018/07/15/页面日期显示格式/index.html">
 <meta property="og:site_name" content="JFBom&#39;s Blog">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/07/15/页面日期显示格式/01.jpg">
+<meta property="og:updated_time" content="2018-07-15T15:03:11.104Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JFBom&#39;s Blog">
+<meta name="twitter:title" content="页面日期显示格式">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/15/页面日期显示格式/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JFBom&#39;s Blog" type="application/atom+xml">
   
@@ -158,66 +162,213 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-页面日期显示格式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/cache-ObjectScript语言-数据排序与查找/" class="archive-article-date">
-  	<time datetime="2018-07-09T12:58:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/cache-ObjectScript语言-数据排序与查找/">Caché ObjectScript语言 数据排序与查找</a>
+    <h1 class="article-title" itemprop="name">
+      页面日期显示格式
     </h1>
   
 
 
-       
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/15/页面日期显示格式/" class="archive-article-date">
+  	<time datetime="2018-07-15T14:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2018/07/15/页面日期显示格式/01.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
+<h4 id="页面日期显示格式"><a href="#页面日期显示格式" class="headerlink" title="页面日期显示格式"></a>页面日期显示格式</h4><ul>
+<li>背景:  数据库中有一个date类型的生日格式</li>
+<li><p>操作：将form表单中, name为birthday  &lt;input type=”text” name=”birthday”//&gt; 的值获取,存入数据库中，再将数据库中日期的值取出，显示在另一个页面</p>
+</li>
+<li></li>
+</ul>
+<p>获取birthday的字符串，转为自己所设定的日期格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/add&quot;) //获取请求的地址</span><br><span class="line">     public String add(HttpServletRequest request) &#123;</span><br><span class="line">     String birthday = request.getParameter(&quot;birthday&quot;);</span><br><span class="line">    try &#123;</span><br><span class="line">       Date date = newSimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(birthday);/*输入格式：1950-12-12*/</span><br><span class="line">       studentService.add(date);  </span><br><span class="line">  </span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    return &quot;redirect:/toShow&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li></li>
+</ul>
+<p>获取格式化日期的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=&quot;http://java.sun.com/jstl/fmt_rt&quot; prefix=&quot;fmt&quot; %&gt;</span><br><span class="line"></span><br><span class="line">&lt;fmt:formatDate value=&apos;$&#123;stu.birthday&#125;&apos; pattern=&apos;yyyy-MM-dd&apos;/&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li></li>
+</ul>
+<p>JSP页面显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@page  language=&quot;java&quot; pageEncoding=&quot;utf-8&quot; %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;%@ taglib uri=&quot;http://java.sun.com/jstl/fmt_rt&quot; prefix=&quot;fmt&quot; %&gt;</span><br><span class="line">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;search&quot; method=&quot;post&quot;&gt;</span><br><span class="line">&lt;table border=&quot;1&quot; width=&quot;700&quot; &gt;</span><br><span class="line">  &lt;tr align=&quot;center&quot;&gt;	</span><br><span class="line">	&lt;td&gt;生日&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;c:forEach items=&quot;$&#123;student&#125;&quot; var=&quot;stu&quot;&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">	&lt;td&gt;&lt;fmt:formatDate value=&apos;$&#123;stu.birthday&#125;&apos; pattern=&apos;yyyy-MM-dd&apos;/&gt;&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;/c:forEach&gt;</span><br><span class="line">  &lt;/table&gt;</span><br><span class="line">  &lt;/form&gt;	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/2.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">caché</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jsp</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/15/页面日期显示格式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+  
+    <a href="/2018/07/12/SSM框架解决页面传输中文乱码问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSM框架解决页面传输乱码问题及数据库插入异常问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzU0OC8xNDA4MA==
+">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -247,9 +398,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
