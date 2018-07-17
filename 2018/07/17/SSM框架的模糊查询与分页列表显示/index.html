@@ -8,20 +8,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   
-  <title>输出最大值和最小值 | JFBom&#39;s Blog</title>
+  <title>SSM框架的模糊查询与分页列表显示 | JFBom&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述:编写一个字符界面的Java Application 程序，接受用户输入的7个整数，并输出这7个整数的最大值和最小值  例子:输入: 3 2 5 7 1 6 4输出:  max=7 , min=1">
-<meta name="keywords" content="编程">
+  <meta name="keywords" content="SSM,SQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="输出最大值和最小值">
-<meta property="og:url" content="http://yoursite.com/2018/06/26/输出最大值和最小值/index.html">
+<meta property="og:title" content="SSM框架的模糊查询与分页列表显示">
+<meta property="og:url" content="http://yoursite.com/2018/07/17/SSM框架的模糊查询与分页列表显示/index.html">
 <meta property="og:site_name" content="JFBom&#39;s Blog">
-<meta property="og:description" content="问题描述:编写一个字符界面的Java Application 程序，接受用户输入的7个整数，并输出这7个整数的最大值和最小值  例子:输入: 3 2 5 7 1 6 4输出:  max=7 , min=1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-26T15:56:53.810Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/17/SSM框架的模糊查询与分页列表显示/01.jpg">
+<meta property="og:updated_time" content="2018-07-17T14:16:11.632Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="输出最大值和最小值">
-<meta name="twitter:description" content="问题描述:编写一个字符界面的Java Application 程序，接受用户输入的7个整数，并输出这7个整数的最大值和最小值  例子:输入: 3 2 5 7 1 6 4输出:  max=7 , min=1">
+<meta name="twitter:title" content="SSM框架的模糊查询与分页列表显示">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/17/SSM框架的模糊查询与分页列表显示/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JFBom&#39;s Blog" type="application/atom+xml">
   
@@ -163,33 +162,58 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-输出最大值和最小值" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SSM框架的模糊查询与分页列表显示" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      输出最大值和最小值
+      SSM框架的模糊查询与分页列表显示
     </h1>
   
 
 
         
-        <a href="/2018/06/26/输出最大值和最小值/" class="archive-article-date">
-  	<time datetime="2018-06-26T15:35:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-26</time>
+        <a href="/2018/07/17/SSM框架的模糊查询与分页列表显示/" class="archive-article-date">
+  	<time datetime="2018-07-17T13:33:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>编写一个字符界面的Java Application 程序，接受用户输入的7个整数，并输出这7个整数的最大值和最小值</p>
-<ul>
-<li>例子:<br>输入: 3 2 5 7 1 6 4<br>输出:  max=7 , min=1</li>
+        <p><img src="/2018/07/17/SSM框架的模糊查询与分页列表显示/01.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
+<h4 id="SSM框架的模糊查询与分页列表显示"><a href="#SSM框架的模糊查询与分页列表显示" class="headerlink" title="SSM框架的模糊查询与分页列表显示"></a>SSM框架的模糊查询与分页列表显示</h4><ul>
+<li>模糊查询<blockquote>
+<p>当需要判断传入的参数是否有值时</p>
+</blockquote>
+</li>
 </ul>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Test1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] array = new int[7];</span><br><span class="line">        Scanner in = new Scanner(System.in);</span><br><span class="line">        for (int i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">            array[i] = in.nextInt();</span><br><span class="line">            Arrays.sort(array);//快速排序</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;max=&quot; + array[array.length - 1] + &quot; , min=&quot; + array[0]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&gt;mapper.xml代码:
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 模糊查询 --&gt;</span><br><span class="line">	&lt;select id=&quot;toFind&quot; resultType=&quot;com.lxj.pojo.Student&quot;</span><br><span class="line">		parameterType=&quot;String&quot;&gt;</span><br><span class="line">		select * from stu</span><br><span class="line">		&lt;where&gt;</span><br><span class="line">			1=1</span><br><span class="line">			&lt;if test=&quot;aname==null and aname==&apos;&apos; and gender == null and gender==&apos;&apos;&quot;&gt;</span><br><span class="line">				and 1=1</span><br><span class="line">			&lt;/if&gt;</span><br><span class="line">			&lt;if test=&quot;aname!=null and aname!=&apos;&apos; or gender == null and gender==&apos;&apos;&quot;&gt;</span><br><span class="line">				and aname LIKE &apos;%$&#123;aname&#125;%&apos;&lt;/if&gt;</span><br><span class="line">			&lt;if test=&quot;gender!=null and gender!=&apos;&apos; or aname==null and aname==&apos;&apos; &quot;&gt;</span><br><span class="line">				and gender=#&#123;gender&#125;</span><br><span class="line">			&lt;/if&gt;</span><br><span class="line">		&lt;/where&gt;</span><br><span class="line">	&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>resultType–存储返回值的类型<br>parameterType–传入参数的类型</p>
+</blockquote>
+<ul>
+<li>分页列表显示:<blockquote>
+<p>如若需要知道数据库中的 <strong>总记录数，总页数，当前页数，和每页显示的记录数</strong>，可以先创建一个bean，来储存上列的内容</p>
+</blockquote>
+</li>
+</ul>
+<pre><code>&gt;PageBean.java
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">package com.lxj.pojo;</span><br><span class="line"></span><br><span class="line">import java.util.LinkedList;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 这是一个用于封装了分页的数据 包含: </span><br><span class="line"> * 该页的成员集合数据</span><br><span class="line"> *  总的记录数 总的页数</span><br><span class="line"> *   当前页 </span><br><span class="line"> *   每页显示的记录数</span><br><span class="line"> * </span><br><span class="line"> * @param &lt;T&gt;</span><br><span class="line"> */</span><br><span class="line">public class PageBean&lt;T&gt; &#123;</span><br><span class="line"></span><br><span class="line">    private int currentPage; // 当前页</span><br><span class="line">    private int totalPage;// 总的页数</span><br><span class="line">    private int pageSize;// 每页显示的记录数</span><br><span class="line">    private int totalSize;// 总的记录数</span><br><span class="line">    private LinkedList&lt;T&gt; list;// 当前页的成员集合</span><br><span class="line"></span><br><span class="line">    public int getCurrentPage() &#123;</span><br><span class="line">        return currentPage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCurrentPage(int currentPage) &#123;</span><br><span class="line">        this.currentPage = currentPage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getTotalPage() &#123;</span><br><span class="line">        return totalPage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setTotalPage(int totalPage) &#123;</span><br><span class="line">        this.totalPage = totalPage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getPageSize() &#123;</span><br><span class="line">        return pageSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setPageSize(int pageSize) &#123;</span><br><span class="line">        this.pageSize = pageSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getTotalSize() &#123;</span><br><span class="line">        return totalSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setTotalSize(int totalSize) &#123;</span><br><span class="line">        this.totalSize = totalSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public LinkedList&lt;T&gt; getList() &#123;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setList(LinkedList&lt;T&gt; list) &#123;</span><br><span class="line">        this.list = list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&gt;mapper.xml中代码
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 分页查询 --&gt;</span><br><span class="line">&lt;select id=&quot;toListFind&quot; resultType=&quot;com.lxj.pojo.Student&quot;</span><br><span class="line">	parameterType=&quot;int&quot;&gt;</span><br><span class="line">	select * from stu</span><br><span class="line">	limit #&#123;currentPage&#125;, #&#123;Page_SIZE&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 查询总的记录数 --&gt;</span><br><span class="line">&lt;select id=&quot;findCount&quot; resultType=&quot;int&quot;&gt;</span><br><span class="line">	select count(*) from stu</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&gt;controller.java
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package com.lxj.controller;</span><br><span class="line">import java.util.LinkedList;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import com.lxj.pojo.PageBean;</span><br><span class="line">import com.lxj.pojo.Student;</span><br><span class="line">import com.lxj.service.StudentService;</span><br><span class="line">@Controller</span><br><span class="line">public class stu &#123;</span><br><span class="line">    </span><br><span class="line">    @Autowired</span><br><span class="line">    private StudentService studentService;</span><br><span class="line">    int Page_SIZE = 5; //一页显示的数据</span><br><span class="line">    @RequestMapping(&quot;/toListselect&quot;)</span><br><span class="line">    public String ListFind(String currentPage,HttpServletRequest request) &#123;</span><br><span class="line">        //1.获取需要显示的页码数</span><br><span class="line">        int currentPage1 = Integer.parseInt(currentPage);</span><br><span class="line">        int curr = (currentPage1-1)*Page_SIZE;</span><br><span class="line">        //2.根据指定的页数，获取该页的数据回来</span><br><span class="line">        PageBean&lt;Student&gt; pageBean = new PageBean&lt;Student&gt;();</span><br><span class="line">        pageBean.setCurrentPage(currentPage1);</span><br><span class="line">        pageBean.setPageSize(Page_SIZE);</span><br><span class="line">        LinkedList&lt;Student&gt; student = studentService.findStudentByPage(curr,Page_SIZE);</span><br><span class="line">       pageBean.setList(student);</span><br><span class="line">           int count = studentService.findCount();</span><br><span class="line">           pageBean.setTotalSize(count);</span><br><span class="line">           pageBean.setTotalPage(count%Page_SIZE==0?count/Page_SIZE:count/Page_SIZE+1);</span><br><span class="line">        </span><br><span class="line">               request.setAttribute(&quot;pageBean&quot;, pageBean);</span><br><span class="line">           //3.跳转界面</span><br><span class="line">        return &quot;list&quot;;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>界面显示:<blockquote>
+<p>jsp页面通过el表达式${}获取</p>
+</blockquote>
+</li>
+</ul>
+<p>el表达式参考代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@page language=&quot;java&quot; pageEncoding=&quot;utf-8&quot;%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;%@ taglib uri=&quot;http://java.sun.com/jstl/fmt_rt&quot; prefix=&quot;fmt&quot;%&gt;</span><br><span class="line">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;form action=&quot;search&quot; method=&quot;post&quot;&gt;</span><br><span class="line">		&lt;table border=&quot;1&quot; width=&quot;700&quot;&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td colspan=&quot;8&quot;&gt;</span><br><span class="line">					按姓名查询:</span><br><span class="line">					&lt;input type=&quot;text&quot; name=&quot;aname&quot;&gt;</span><br><span class="line">					&amp;nbsp; &amp;nbsp;&amp;nbsp; 按性别查询:</span><br><span class="line">					&lt;select name=&quot;agender&quot;&gt;</span><br><span class="line">						&amp;nbsp;&amp;nbsp;&amp;nbsp;</span><br><span class="line">						&lt;option value=&quot;&quot;&gt;--请选择--</span><br><span class="line">						&lt;option value=&quot;男&quot;&gt;男</span><br><span class="line">						&lt;option value=&quot;女&quot;&gt;女</span><br><span class="line">					&lt;/select&gt;</span><br><span class="line">					&lt;input type=&quot;submit&quot; value=&quot;查询&quot;&gt;</span><br><span class="line">					&lt;a href=&quot;toadd&quot;&gt;添加&lt;/a&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">				&lt;td&gt;编号&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;姓名&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;性别&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;电话&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;生日&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;爱好&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;简介&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;操作&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;c:forEach items=&quot;$&#123;pageBean.list&#125;&quot; var=&quot;stu&quot;&gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td&gt;$&#123;stu.aid&#125;&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;$&#123;stu.aname&#125;&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;$&#123;stu.gender&#125;&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;$&#123;stu.phone&#125;&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">					&lt;td&gt;</span><br><span class="line">						&lt;fmt:formatDate value=&apos;$&#123;stu.birthday&#125;&apos; pattern=&apos;yyyy-MM-dd&apos; /&gt;</span><br><span class="line">					&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;$&#123;stu.hobby&#125;&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;$&#123;stu.info&#125;&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;</span><br><span class="line">						&lt;input type=&quot;hidden&quot; value=&quot;$&#123;stu.aid &#125;&quot; id=&quot;aid&quot; /&gt;</span><br><span class="line">						&lt;a href=&quot;toUpdate?aid=$&#123;stu.aid&#125;&quot;&gt;更新&lt;/a&gt;</span><br><span class="line">						&lt;a href=&quot;#&quot; onclick=&quot;toDelete($&#123;stu.aid&#125;);&quot;&gt;删除&lt;/a&gt;</span><br><span class="line">					&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">			&lt;/c:forEach&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td colspan=&quot;8&quot;&gt;</span><br><span class="line">					第$&#123;pageBean.currentPage &#125;/$&#123;pageBean.totalPage &#125;&amp;nbsp;&amp;nbsp;&amp;nbsp; 每页显示 $&#123;pageBean.pageSize&#125;条 &amp;nbsp;&amp;nbsp;&amp;nbsp; 总的记录数$&#123;pageBean.totalSize &#125;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;c:if test=&quot;$&#123;pageBean.currentPage!=1&#125;&quot;&gt;</span><br><span class="line">						&lt;a href=&quot;toListselect?currentPage=1&quot;&gt;首页&lt;/a&gt; | 	&lt;a href=&quot;toListselect?currentPage=$&#123;pageBean.currentPage-1 &#125;&quot;&gt;上一页&lt;/a&gt;</span><br><span class="line">					&lt;/c:if&gt;</span><br><span class="line">					&lt;c:if test=&quot;$&#123;pageBean.currentPage!=pageBean.totalPage&#125;&quot;&gt;</span><br><span class="line">						&lt;a href=&quot;toListselect?currentPage=$&#123;pageBean.currentPage+1 &#125;&quot;&gt;下一页&lt;/a&gt; |&lt;a href=&quot;toListselect?currentPage=$&#123;pageBean.totalPage &#125;&quot;&gt; 尾页 </span><br><span class="line">					&lt;/c:if&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">          	function toDelete(aid)&#123;</span><br><span class="line">          		//var aid=document.getElementById(&quot;aid&quot;).value;</span><br><span class="line">		var flag = confirm(&quot;是否确定删除?&quot;);</span><br><span class="line">		if(flag)&#123;</span><br><span class="line">          		window.location.href=&quot;toDelete?aid=&quot;+aid;</span><br><span class="line">          	&#125;</span><br><span class="line">          	&#125;</span><br><span class="line">          </span><br><span class="line">          &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -229,7 +253,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SSM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
         		</li>
       		
 		</ul>
@@ -286,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/26/输出最大值和最小值/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/17/SSM框架的模糊查询与分页列表显示/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,19 +328,10 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/27/XML解析/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          XML解析器
-        
-      </div>
-    </a>
   
   
-  
-    <a href="/2018/06/26/JDBC连接操作/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JDBC连接操作</div>
+    <a href="/2018/07/15/页面日期显示格式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">页面日期显示格式</div>
       <i class="icon-circle-right"></i>
     </a>
   
