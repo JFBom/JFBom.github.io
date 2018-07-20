@@ -8,15 +8,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   
-  <title>Archives | JFBom&#39;s Blog</title>
+  <title>Oracle 将查询到的信息转化为固定模板的xml字符流 | JFBom&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JFBom&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="keywords" content="oracle,PL&#x2F;SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle 将查询到的信息转化为固定模板的xml字符流">
+<meta property="og:url" content="http://yoursite.com/2018/07/20/orcle/index.html">
 <meta property="og:site_name" content="JFBom&#39;s Blog">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/07/20/orcle/01.jpg">
+<meta property="og:updated_time" content="2018-07-20T15:48:20.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JFBom&#39;s Blog">
+<meta name="twitter:title" content="Oracle 将查询到的信息转化为固定模板的xml字符流">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/20/orcle/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JFBom&#39;s Blog" type="application/atom+xml">
   
@@ -158,362 +162,222 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-orcle" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Oracle 将查询到的信息转化为固定模板的xml字符流
+    </h1>
+  
+
+
+        
+        <a href="/2018/07/20/orcle/" class="archive-article-date">
+  	<time datetime="2018-07-20T14:54:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2018/07/20/orcle/01.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
+<h4 id="Oracle查询到的信息转化为固定模板的xml字符流"><a href="#Oracle查询到的信息转化为固定模板的xml字符流" class="headerlink" title="Oracle查询到的信息转化为固定模板的xml字符流"></a>Oracle查询到的信息转化为固定模板的xml字符流</h4><blockquote>
+<p>下面个例子用到的包<br>DBMS_XMLQUERY包用于将查询结果转换为XML格式<br>  DBMS_LOB包中含处理大型对象的过程和函数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">	DECLARE</span><br><span class="line">  			result CLOB; /* CLOB 将字符大对象存储为数据库表某一行中的一个列值 */</span><br><span class="line">  			xmlstr VARCHAR2(32767); /* VARCHAR2 可变的字符数组 参数32767为最大的长度 */</span><br><span class="line">  			line   VARCHAR2(2000);</span><br><span class="line">  			line_no  INTEGER :=1;  	/* :=  赋值 */</span><br><span class="line">	BEGIN </span><br><span class="line">			 result :=DBMS_XMLQUERY.getXml(&apos;select * from pat_card_index&apos;);</span><br><span class="line">   			</span><br><span class="line">   			    				/* SUBSTR(String string,int a) 截取返回String字符串从a开始所有字符  */</span><br><span class="line"></span><br><span class="line">  			 xmlstr :=DBMS_LOB.SUBSTR(result,32767);   </span><br><span class="line"> 	LOOP</span><br><span class="line">     			 EXIT WHEN xmlstr IS NULL;</span><br><span class="line">            				</span><br><span class="line">            				/* INSTR(String string1, String string2) 返回string2在string1中出现的位置 </span><br><span class="line">        			 		SUBSTR（String string，int a,int b）返回从a开始到b的字符串*/</span><br><span class="line">     			</span><br><span class="line">     			line :=SUBSTR(xmlstr,1,INSTR(xmlstr,CHR(10))-1);</span><br><span class="line">     			 DBMS_OUTPUT.PUT_LINE(line_no || &apos;:&apos; || line);</span><br><span class="line">      			 xmlstr :=SUBSTR(xmlstr,INSTR(xmlstr,CHR(10))+1);</span><br><span class="line">      			line_no :=line_no + 1;</span><br><span class="line">	END LOOP;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<h5 id="PL-SQL"><a href="#PL-SQL" class="headerlink" title="PL/SQL"></a>PL/SQL</h5><blockquote>
+<p><strong>程序结构:  分三块 declare /begin / exception</strong><br>declare /<em>声明区（可选）: 定义类型和变量、声明变量、声明函数、游标</em>/<br>begin /<em>执行区（must）:执行pl/SQL语句或者sql语句</em>/<br>exception /<em>异常处理区（可选）: 处理错误的</em>/<br>end /<em>结束标志符</em>/</p>
+</blockquote>
+<blockquote>
+<p><strong>控制结构: 条件结构 / 循环结构 / 顺序结构</strong><br>条件结构: IF ?? THEN ? ELSE ? END IF;<br>循环结构: LOOP…END LOOP<br> …………    WHERE ? LOOP…ENDLOOP<br>           …………. FOR i IN LOW ..UPPERLOOP … END LOOP<br>顺序结构: GOTO</p>
+</blockquote>
+<blockquote>
+<p><strong>基本命令: 数据定义语言（DDL）/ 数据操纵语言（DML） / 数据控制语言（DCL）</strong><br>DDL: Create  Drop   Grant  Revoke  …<br>DML: Update  Insert Delete …<br>DCL: Commit  Rollback Savepoint …<br>…</p>
+</blockquote>
+<blockquote>
+<p><strong>过程与函数</strong><br>过程:Create or replace procedure name(parameters) as PL/SQL语句块 (IS 或 AS 都一样)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*过程SAMPLE*/</span><br><span class="line">CREATE OR REPLACE PROCEDURE print_temp</span><br><span class="line">IS</span><br><span class="line">    v_average NUMBER;</span><br><span class="line">    v_sum     NUMBER;</span><br><span class="line">BEGIN</span><br><span class="line">    SELECT AVG(n), SUM(n) INTO v_average, v_sum</span><br><span class="line">    FROM TEMP;</span><br><span class="line"></span><br><span class="line">    dbms_output.put_line(&apos;Average:&apos;||v_average);</span><br><span class="line">    dbms_output.put_line(&apos;Sum:&apos;||v_sum);</span><br><span class="line">END print_temp;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>函数:Create or replace function name(parameters) return value as PL/SQL语句块</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*函数SAMPLE*/</span><br><span class="line">CREATE OR REPLACE FUNCTION tomorrow RETURN DATE</span><br><span class="line">IS</span><br><span class="line">    next_day DATE;</span><br><span class="line">BEGIN</span><br><span class="line">    next_day := SYSDATE + 1;</span><br><span class="line">    RETURN next_day;</span><br><span class="line">END tomorrow;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>游标</strong><br>游标的定义:用游标来指代一个DML SQL操作返回的结果集。即当一个对数据库的查询操作返回一组结果集时(<strong>important!</strong>)<br><strong>显式游标: 四个步骤</strong><br>1)声明游标:CURSOR cursor_name IS select_statement<br>2)打开游标:OPEN cursor_name<br>3)将结果放入PL/SQL变量（FETCH）: FETCH cursor_name INTO list_of_variables<br>4)关闭游标:CLOSE cursor_name<br><strong>隐式游标:</strong><br>SELECT （要查询的值）<br>INTO （要放入的结果集，与查询的值的参数对应）<br>FROM (查询的表)<br>WHERE （定义符合的类型）</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/2.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/26/JDBC连接操作/" class="archive-article-date">
-  	<time datetime="2018-06-26T14:35:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/26/JDBC连接操作/">JDBC连接操作</a>
-    </h1>
-  
-
-
-       
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/25/在字符串中插入字符/" class="archive-article-date">
-  	<time datetime="2018-06-25T07:03:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/25/在字符串中插入字符/">在字符串中插入数字</a>
-    </h1>
-  
-
-
-       
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/24/验证字符串中算式等式是否成立/" class="archive-article-date">
-  	<time datetime="2018-06-24T14:53:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/24/验证字符串中算式等式是否成立/">验证字符串中的算式等式是否成立</a>
-    </h1>
-  
-
-
-       
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/24/多线程并发是如何解决/" class="archive-article-date">
-  	<time datetime="2018-06-24T13:12:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/24/多线程并发是如何解决/">多线程并发时如何解决</a>
-    </h1>
-  
-
-
-       
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">PL/SQL</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/20/orcle/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/24/SSM框架的优势/" class="archive-article-date">
-  	<time datetime="2018-06-24T12:46:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+  
+    <a href="/2018/07/17/SSM框架的模糊查询与分页列表显示/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSM框架的模糊查询与分页列表显示</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/24/SSM框架的优势/">SSM框架的优势</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-       
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SSM</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/23/单词倒序输出/" class="archive-article-date">
-  	<time datetime="2018-06-23T12:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/23/单词倒序输出/">单词倒序输出</a>
-    </h1>
-  
-
-
-       
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/23/什么是抽象类/" class="archive-article-date">
-  	<time datetime="2018-06-23T12:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/23/什么是抽象类/">什么是抽象类</a>
-    </h1>
-  
-
-
-       
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/23/如何实现多线程/" class="archive-article-date">
-  	<time datetime="2018-06-23T11:10:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/23/如何实现多线程/">如何实现多线程</a>
-    </h1>
-  
-
-
-       
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
+  
+  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzU0OC8xNDA4MA==
+">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
+
+  
+
+  
+
 
 
           </div>
@@ -543,8 +407,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
