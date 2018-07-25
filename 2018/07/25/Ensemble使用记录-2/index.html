@@ -8,19 +8,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   
-  <title>多线程并发时如何解决 | JFBom&#39;s Blog</title>
+  <title>Ensemble使用记录-2 | JFBom&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="java,多线程">
+  <meta name="keywords" content="Caché,Ensemble">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多线程并发时如何解决">
-<meta property="og:url" content="http://yoursite.com/2018/06/24/多线程并发是如何解决/index.html">
+<meta property="og:title" content="Ensemble使用记录-2">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/Ensemble使用记录-2/index.html">
 <meta property="og:site_name" content="JFBom&#39;s Blog">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/06/24/多线程并发是如何解决/02.jpg">
-<meta property="og:updated_time" content="2018-07-20T14:32:39.014Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/Ensemble使用记录-2/01.jpg">
+<meta property="og:updated_time" content="2018-07-25T15:55:06.454Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多线程并发时如何解决">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/24/多线程并发是如何解决/02.jpg">
+<meta name="twitter:title" content="Ensemble使用记录-2">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/25/Ensemble使用记录-2/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JFBom&#39;s Blog" type="application/atom+xml">
   
@@ -162,34 +162,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-多线程并发是如何解决" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Ensemble使用记录-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      多线程并发时如何解决
+      Ensemble使用记录-2
     </h1>
   
 
 
         
-        <a href="/2018/06/24/多线程并发是如何解决/" class="archive-article-date">
-  	<time datetime="2018-06-24T13:12:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
+        <a href="/2018/07/25/Ensemble使用记录-2/" class="archive-article-date">
+  	<time datetime="2018-07-25T14:50:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2018/06/24/多线程并发是如何解决/02.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
-<h3 id="1-利用同步机制-synchronized关键字-，使得同一时间只有一个线程可以访问共享数据（效率低）"><a href="#1-利用同步机制-synchronized关键字-，使得同一时间只有一个线程可以访问共享数据（效率低）" class="headerlink" title="1.利用同步机制(synchronized关键字 )，使得同一时间只有一个线程可以访问共享数据（效率低）"></a>1.利用同步机制(synchronized关键字 )，使得同一时间只有一个线程可以访问共享数据（效率低）</h3><pre><code>&gt;synchronized 
-同步块，通过 synchronized 关键字来实现，所有加上synchronized 和 块语句，在多线程访问的时候，同一时刻只能有一个线程能够用synchronized 修饰的方法或者代码块
-</code></pre><h3 id="2-使用volatile"><a href="#2-使用volatile" class="headerlink" title="2.使用volatile"></a>2.使用volatile</h3><pre><code>&gt;volatile 变量可以被看作是一种 “程度较轻的 synchronized”,具有 synchronized 的可见性特性，但是不具备原子特性。这就是说线程能够自动发现 volatile 变量的最新值
-
-&gt;一个指令包含volatile修饰的变量，那么这条指令的执行顺序不变，该指令前后的指令可以各自独立重排，无法交叉重排。
-</code></pre>
+        <p><img src="/2018/07/25/Ensemble使用记录-2/01.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
+<h4 id="将数据库表中的查到的数据转为固定格式的XML"><a href="#将数据库表中的查到的数据转为固定格式的XML" class="headerlink" title="将数据库表中的查到的数据转为固定格式的XML"></a>将数据库表中的查到的数据转为固定格式的XML</h4><blockquote>
+<p>在格式中间需要空一格,不空一格的话，不能取数据<br><strong>For Example:</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*error*/</span><br><span class="line">XData Patient</span><br><span class="line">&#123;</span><br><span class="line">&lt;patient_info&gt;</span><br><span class="line">	&lt;patientid&gt;&lt;/patientid&gt;</span><br><span class="line">	&lt;name&gt;&lt;/name&gt;</span><br><span class="line">	&lt;name_phonetic&gt;&lt;/name_phonetic&gt;</span><br><span class="line">	&lt;sex&gt;&lt;/sex&gt;</span><br><span class="line">&lt;/patient_info&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*true*/</span><br><span class="line">XData Patient</span><br><span class="line">&#123;</span><br><span class="line">&lt;patient_info&gt;</span><br><span class="line">	&lt;patientid&gt; &lt;/patientid&gt;</span><br><span class="line">	&lt;name&gt; &lt;/name&gt;</span><br><span class="line">	&lt;name_phonetic&gt; &lt;/name_phonetic&gt;</span><br><span class="line">	&lt;sex&gt; &lt;/sex&gt;</span><br><span class="line">&lt;/patient_info&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>传入的数据，都要先转为字符串</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Set PatientID = source.PatientID</span><br><span class="line">Set tParams(&quot;PatientID&quot;)=&quot;&apos;&quot;_PatientID_&quot;&apos;&quot;</span><br><span class="line">Set PatName = source.PatName</span><br><span class="line">Set tParams(&quot;PatName&quot;)=&quot;&apos;&quot;_PatName_&quot;&apos;&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="格式匹配问题"><a href="#格式匹配问题" class="headerlink" title="格式匹配问题:"></a>格式匹配问题:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*test-04*/</span><br><span class="line">XData Patient</span><br><span class="line">&#123;</span><br><span class="line">&lt;patient_info&gt;</span><br><span class="line">	&lt;patientid&gt; &lt;/patientid&gt;</span><br><span class="line">	&lt;name&gt; &lt;/name&gt;</span><br><span class="line">	&lt;name_phonetic&gt; &lt;/name_phonetic&gt;</span><br><span class="line">	&lt;sex&gt; &lt;/sex&gt;</span><br><span class="line">&lt;/patient_info&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>下面的test-05代码块 template match=”//…”<br>patient_info对应test-04代码块的父节点，<br>patientid对应test-04代码块patient_info下的子节点<br>text()是外界传入的值的显示<br>value-of select=”$PatientID” $里的值对应test-05代码块里的param name的值 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*test-05*/</span><br><span class="line"></span><br><span class="line">&lt;xsl:param name=&quot;PatientID&quot;/&gt;</span><br><span class="line">&lt;xsl:param name=&quot;PatName&quot;/&gt;</span><br><span class="line">&lt;xsl:param name=&quot;PatNamePy&quot;/&gt;</span><br><span class="line">&lt;xsl:param name=&quot;PatSex&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;xsl:template match=&quot;//patient_info/patientid/text()&quot;&gt;</span><br><span class="line">     &lt;xsl:value-of select=&quot;$PatientID&quot;/&gt;</span><br><span class="line">&lt;/xsl:template&gt;</span><br><span class="line"> &lt;xsl:template match=&quot;//patient_info/name/text()&quot;&gt;</span><br><span class="line">     &lt;xsl:value-of select=&quot;$PatName&quot;/&gt;</span><br><span class="line">&lt;/xsl:template&gt; </span><br><span class="line">&lt;xsl:template match=&quot;//patient_info/name_phonetic/text()&quot;&gt;</span><br><span class="line">	</span><br><span class="line">     	&lt;xsl:value-of select=&quot;$PatNamePy&quot;/&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/xsl:template&gt; </span><br><span class="line">&lt;xsl:template match=&quot;//patient_info/sex/text()&quot;&gt;</span><br><span class="line">	  </span><br><span class="line">     	&lt;xsl:value-of select=&quot;$PatSex&quot;/&gt;</span><br><span class="line">    </span><br><span class="line">&lt;/xsl:template&gt;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -228,11 +236,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Caché</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Ensemble</a>
         		</li>
       		
 		</ul>
@@ -289,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/24/多线程并发是如何解决/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/25/Ensemble使用记录-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,19 +311,10 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/24/验证字符串中算式等式是否成立/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          验证字符串中的算式等式是否成立
-        
-      </div>
-    </a>
   
   
-  
-    <a href="/2018/06/24/SSM框架的优势/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SSM框架的优势</div>
+    <a href="/2018/07/24/Ensemble使用记录-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ensemble使用记录-1</div>
       <i class="icon-circle-right"></i>
     </a>
   
