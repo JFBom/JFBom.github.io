@@ -8,20 +8,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   
-  <title>在字符串中插入数字 | JFBom&#39;s Blog</title>
+  <title>Ensemble使用记录-3 | JFBom&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述:在一个字符串指定的位置插入数字，该字符串是由几个或者单个单词组成，在单词的后面加上个数  (单词之间允许有多个空格)   例子:  输入:”are you ok”输出:”are1 you2 ok3”">
-<meta name="keywords" content="编程">
+  <meta name="keywords" content="Ensemble,Caché">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在字符串中插入数字">
-<meta property="og:url" content="http://yoursite.com/2018/06/25/在字符串中插入字符/index.html">
+<meta property="og:title" content="Ensemble使用记录-3">
+<meta property="og:url" content="http://yoursite.com/2018/07/26/Ensemble使用记录-3/index.html">
 <meta property="og:site_name" content="JFBom&#39;s Blog">
-<meta property="og:description" content="问题描述:在一个字符串指定的位置插入数字，该字符串是由几个或者单个单词组成，在单词的后面加上个数  (单词之间允许有多个空格)   例子:  输入:”are you ok”输出:”are1 you2 ok3”">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-25T09:37:46.956Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/26/Ensemble使用记录-3/01.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/26/Ensemble使用记录-3/02.png">
+<meta property="og:updated_time" content="2018-07-26T15:15:40.162Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在字符串中插入数字">
-<meta name="twitter:description" content="问题描述:在一个字符串指定的位置插入数字，该字符串是由几个或者单个单词组成，在单词的后面加上个数  (单词之间允许有多个空格)   例子:  输入:”are you ok”输出:”are1 you2 ok3”">
+<meta name="twitter:title" content="Ensemble使用记录-3">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/26/Ensemble使用记录-3/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JFBom&#39;s Blog" type="application/atom+xml">
   
@@ -163,36 +163,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-在字符串中插入字符" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Ensemble使用记录-3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      在字符串中插入数字
+      Ensemble使用记录-3
     </h1>
   
 
 
         
-        <a href="/2018/06/25/在字符串中插入字符/" class="archive-article-date">
-  	<time datetime="2018-06-25T07:03:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
+        <a href="/2018/07/26/Ensemble使用记录-3/" class="archive-article-date">
+  	<time datetime="2018-07-26T14:28:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>在一个字符串指定的位置插入数字，该字符串是由几个或者单个单词组成，在单词的后面加上个数 <strong> (单词之间允许有多个空格) </strong></p>
-<ul>
-<li>例子:</li>
-</ul>
-<p>输入:”are you ok”<br>输出:”are1 you2 ok3”</p>
-<a id="more"></a>
-<pre><code>&gt;解题思路:
-    用split()将字符串中的单词分隔开，然后再单词后加入字符，最后将单词连接起来
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Test2 &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * 测试案列: input:   are you OK </span><br><span class="line">	 *               output: are1 you2 OK3</span><br><span class="line">	 * </span><br><span class="line">	 */</span><br><span class="line">	public void funC() &#123;</span><br><span class="line">		Scanner in = new Scanner( System.in );</span><br><span class="line">		for (int ci = 0; ci &lt; 10; ci++) &#123; //设置在控制台输入字符串次数</span><br><span class="line">			String str = new String( in.nextLine() );</span><br><span class="line">			String str1 = new String();</span><br><span class="line">			String[] strfen = str.split( &quot;\\W+&quot;); //将单词分隔开，用字符串数组表示，&quot;\\W+&quot;请查看正则表达式语法</span><br><span class="line">			for (int i = 0; i &lt; strfen.length; i++) &#123;</span><br><span class="line">				char j = (char) (i + 49); //根据ASCII码，将数字转为字符</span><br><span class="line">				strfen[ i ] += j;//插入字符</span><br><span class="line">			&#125;</span><br><span class="line">			for (int i = 0; i &lt; strfen.length; i++) &#123;//将字符串数组相加</span><br><span class="line">				if (i == strfen.length - 1) &#123;</span><br><span class="line">					str1 += strfen[ i ];</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					str1 += strfen[ i ] + &quot; &quot;;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println( str1 );</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Test2 test = new Test2();</span><br><span class="line">		test.funC();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/07/26/Ensemble使用记录-3/01.jpg" alt="&quot;&quot;"><br><a id="more"></a></p>
+<h4 id="通过第三方的webservice将数据发送"><a href="#通过第三方的webservice将数据发送" class="headerlink" title="通过第三方的webservice将数据发送"></a>通过第三方的webservice将数据发送</h4><blockquote>
+<p>webservice:<br>首先获取目的地址—&gt;Caché中Tools-&gt;add ins-&gt;SOAP向导-&gt;将目的地址输入—&gt;创建webclient</p>
+</blockquote>
+<p><img src="/2018/07/26/Ensemble使用记录-3/02.png" alt="&quot;&quot;"></p>
+<blockquote>
+<p>Business Processes流程活动<br>&nbsp;&nbsp;调用(call) 请求消息类,需引用的类即目标类(Business Operations)中request参数的类型<br>&nbsp;&nbsp;调用(call) 响应消息类,需引用的类即目标类(Business Operations)中response参数的类型<br>&nbsp;&nbsp;调用(call) 请求操作,属性为我们设置的参数,值为设置参数传入的值<br>&nbsp;&nbsp;调用(call) 响应操作,属性为我们设置的参数,值为设置参数传出的值<br>&nbsp;&nbsp;转换(transform) 数据转化类,即为我们自己写的转化类; 源:即为转化类中要被转化参数(第一个参数)的类型,目标:即为转化类中需转化成的参数类型(第二个参数)。<strong>（这里需注意:当其中的源和目标中都有我们需要的参数，我们应该在上下文中设置我们需要的类型)</strong></p>
+</blockquote>
 
       
 
@@ -232,7 +231,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Ensemble</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Caché</a>
         		</li>
       		
 		</ul>
@@ -289,7 +292,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/25/在字符串中插入字符/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/26/Ensemble使用记录-3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,19 +306,19 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/26/JDBC连接操作/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/27/Ensemble4/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JDBC连接操作
+          Ensemble使用记录-4
         
       </div>
     </a>
   
   
   
-    <a href="/2018/06/24/验证字符串中算式等式是否成立/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">验证字符串中的算式等式是否成立</div>
+    <a href="/2018/07/25/Ensemble使用记录-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ensemble使用记录-2</div>
       <i class="icon-circle-right"></i>
     </a>
   
